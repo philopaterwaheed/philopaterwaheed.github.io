@@ -1,0 +1,4 @@
+[build]
+target = "index.html"
+dist = "../build/projects"
+public_url = "/projects/"

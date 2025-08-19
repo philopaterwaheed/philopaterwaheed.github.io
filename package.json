@@ -1,0 +1,6 @@
+{
+  "name": "portfolio",
+  "scripts": {
+    "build-all": "rm -rf build && mkdir -p build/home build/projects && cp index.html build/ && cd home && npm run build && cp -r build/* ../build/home/ && cd ../projects && trunk build --release"
+  }
+}
