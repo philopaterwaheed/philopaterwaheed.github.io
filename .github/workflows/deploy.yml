@@ -44,6 +44,10 @@ jobs:
     - name: Install dependencies (home)
       run: cd home && npm install
       
+    - name: Install dependencies (project)
+      run: cd project && npm install
+      
+  
     - name: Build all applications
       run: npm run build-all
       
