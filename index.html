@@ -5,102 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philopater Waheed - Portfolio</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f5f5f5;
+        
+        .loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 64px;
+            height: 64px;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: none;
+            z-index: 1000;
         }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
+        .loader:after{
+            content: '';
+            position: absolute;
+            inset: 8px;
+            margin: auto;
+            background: #222b32;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
+        .loader:before{
+            content: '';
+            position: absolute;
+            inset: -15px;
+            margin: auto;
+            background: #5237c6;
+            animation: diamondLoader 2s linear infinite;
         }
-        .app-links {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
+        @keyframes diamondLoader {
+            0%, 10% {
+                transform: translate(-64px, -64px) rotate(-45deg);
+            }
+            90%, 100% {
+                transform: translate(0px, 0px) rotate(-45deg);
+            }
         }
-        .app-card {
-            background: #007acc;
-            color: white;
-            padding: 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: transform 0.2s, background-color 0.2s;
-            min-width: 200px;
-            display: block;
-        }
-        .app-card:hover {
-            transform: translateY(-5px);
-            background: #005a9e;
-            text-decoration: none;
-            color: white;
-        }
-        .app-card h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.5em;
-        }
-        .app-card p {
-            margin: 0;
-            opacity: 0.9;
-        }
-        .rust-card {
-            background: #ce422b;
-        }
-        .rust-card:hover {
-            background: #a73520;
-        }
-        .contact-card {
-            background: #28a745;
-        }
-        .contact-card:hover {
-            background: #1e7e34;
-        }
-        .skills-card {
-            background: #6f42c1;
-        }
-        .skills-card:hover {
-            background: #5a32a3;
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            z-index: 999;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Philopater Waheed's Portfolio</h1>
-        <p>Choose an application to explore:</p>
-        
-        <div class="app-links">
-            <a href="/home/" class="app-card">
-                <h2>React App</h2>
-                <p>Home & Portfolio</p>
-            </a>
-            <a href="/projects/" class="app-card rust-card">
-                <h2>Rust Projects</h2>
-                <p>WebAssembly Applications</p>
-            </a> 
-            <a href="/project/" class="app-card rust-card">
-                <h2>React Native Projects</h2>
-                <p>react native Applications</p>
-            </a>
-            <a href="/skills/" class="app-card skills-card">
-                <h2>Skills & Brython</h2>
-                <p>Python in the Browser</p>
-            </a>
-            <a href="/contacts/" class="app-card contact-card">
-                <h2>Contact</h2>
-                <p>Get in Touch</p>
-            </a>
-        </div>
+    <div class="loading-overlay" id="loadingOverlay">
+        <span class="loader" id="loader"></span>
     </div>
+    
+    
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const overlay = document.getElementById('loadingOverlay');
+                const loader = document.getElementById('loader');
+                
+                overlay.style.display = 'block';
+                loader.style.display = 'block';
+                
+                setTimeout(function() {
+                    window.location.href = '/home/';
+                }, 2000);
+            }, 0);
+        });
+    </script>
 </body>
 </html>
