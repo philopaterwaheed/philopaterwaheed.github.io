@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.13.2/brython.min.js"></script>
+</head>
+<body onload="brython()">
+
+<h1 id="demo">Hello</h1>
+
+<script type="text/python">
+from browser import document
+
+def change_text(ev):
+    document["demo"].text = "Hello from Python!"
+
+document["demo"].bind("click", change_text)
+</script>
+
+</body>
+</html>
