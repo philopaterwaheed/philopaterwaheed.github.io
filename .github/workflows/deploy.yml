@@ -27,15 +27,48 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
+        
+    - name: Cache Node.js dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          **/node_modules
+          home/node_modules
+          project/node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/package.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
         
     - name: Setup Rust
       uses: dtolnay/rust-toolchain@stable
       with:
         targets: wasm32-unknown-unknown
         
+    - name: Cache Rust dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/bin/
+          ~/.cargo/registry/index/
+          ~/.cargo/registry/cache/
+          ~/.cargo/git/db/
+          projects/target/
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock', '**/Cargo.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+        
+    - name: Cache Trunk installation
+      uses: actions/cache@v4
+      id: trunk-cache
+      with:
+        path: ~/.cargo/bin/trunk
+        key: ${{ runner.os }}-trunk-${{ hashFiles('projects/Cargo.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-trunk-
+        
     - name: Install trunk
+      if: steps.trunk-cache.outputs.cache-hit != 'true'
       run: cargo install trunk
       
     - name: Install dependencies (root)
