@@ -327,7 +327,9 @@ function App() {
   }), []);
 
   //inspired by pwm's tiling algorithm (https://github.com/philopaterwaheed/pwm/blob/main/arrange.cpp)
-  const tileWindows = useCallback((windowsList) => {
+  const tileWindows = useCallback((windowsList, masterWindowId = null) => {
+    const activeMasterWindow = masterWindowId !== null ? masterWindowId : masterWindow;
+    
     if (windowsList.length === 0) return [];
 
     const screenWidth = window.innerWidth;
@@ -336,16 +338,19 @@ function App() {
     const masterWidth = Math.floor(screenWidth * TILING_CONFIG.MASTER_WIDTH_RATIO);
     const stackWidth = screenWidth - masterWidth - TILING_CONFIG.GAP_SIZE;
 
+    const stackCount = windowsList.length - 1;
+    let currentStackIndex = 0;
+
     const tiledWindows = windowsList.map((win, index) => {
       let x, y, width, height;
 
-      if (win.id === masterWindow || (masterWindow === null && index === 0)) {
-        // Master window (first window)
+      if (win.id === activeMasterWindow || (activeMasterWindow === null && index === 0)) {
+        // Master window
         if (windowsList.length === 1) {
           x = TILING_CONFIG.GAP_SIZE;
           y = 0;
           width = screenWidth - 2 * TILING_CONFIG.GAP_SIZE;
-          height = availableHeight ;
+          height = availableHeight;
         } else {
           // Master window with stack windows
           x = TILING_CONFIG.GAP_SIZE;
@@ -355,18 +360,17 @@ function App() {
         }
       } else {
         // Stack windows (positioned on the right side)
-        const stackCount = windowsList.length - 1;
-        const stackIndex = index - 1;
-        
         // Calculate height for each stacked window
         const totalGaps = (stackCount - 1) * TILING_CONFIG.GAP_SIZE;
         const stackWindowHeight = Math.floor((availableHeight - 2 * TILING_CONFIG.GAP_SIZE - totalGaps) / stackCount);
         
         x = masterWidth + TILING_CONFIG.GAP_SIZE;
         y = TILING_CONFIG.GAP_SIZE + 
-            stackIndex * (stackWindowHeight + TILING_CONFIG.GAP_SIZE);
+            currentStackIndex * (stackWindowHeight + TILING_CONFIG.GAP_SIZE);
         width = stackWidth - 2 * TILING_CONFIG.GAP_SIZE;
         height = stackWindowHeight;
+        
+        currentStackIndex++;
       }
 
       return {
@@ -379,7 +383,7 @@ function App() {
     });
 
     return tiledWindows;
-  }, [TILING_CONFIG]);
+  }, [TILING_CONFIG, masterWindow]);
 
   const createWindow = useCallback((type, x = 100, y = 100) => {
     const config = windowConfigs[type];
@@ -397,31 +401,37 @@ function App() {
       zIndex: windows.length + 1
     };
 
+    const newMasterWindowId = newWindow.id;
+    setMasterWindow(newMasterWindowId);
+
     setWindows(prev => {
       const updatedWindows = [...prev, newWindow];
-      return tileWindows(updatedWindows);
+      return tileWindows(updatedWindows, newMasterWindowId);
     });
     
-    setMasterWindow(newWindow.id);
     setActiveWindow(newWindow.id);
   }, [windows.length, windowConfigs, tileWindows]);
 
   const closeWindow = useCallback((id) => {
     setWindows(prev => {
       const filteredWindows = prev.filter(w => w.id !== id);
+      
+      // Update master window if needed in the same state update
+      if (filteredWindows.length > 0 && masterWindow === id) {
+        // Set a new master window if the current one is being closed
+        const newMasterId = filteredWindows[0].id;
+        setMasterWindow(newMasterId);
+        return tileWindows(filteredWindows, newMasterId);
+      }
+      
       return tileWindows(filteredWindows);
     });
     
-    // Update master window if needed
-    setWindows(prev => {
-      if (prev.length > 0 && masterWindow === id) {
-        setMasterWindow(prev[prev.length - 1].id);
-      }
-      return prev;
-    });
-    
-    setActiveWindow(null);
-  }, [tileWindows, masterWindow]);
+    // Update active window if needed
+    if (activeWindow === id) {
+      setActiveWindow(null);
+    }
+  }, [tileWindows, masterWindow, activeWindow]);
 
   const focusWindow = useCallback((id) => {
     setActiveWindow(id);
