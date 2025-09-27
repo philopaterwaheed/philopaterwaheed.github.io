@@ -394,10 +394,6 @@ function App() {
       type,
       title: config.title,
       content: config.content,
-      x: 0, 
-      y: 0,
-      width: 0,
-      height: 0,
       zIndex: windows.length + 1
     };
 
@@ -492,7 +488,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [createWindow, showHelp]);
+  }, [createWindow, showHelp, closeWindow, activeWindow]);
 
   return (
     <div className="pwm-desktop">
