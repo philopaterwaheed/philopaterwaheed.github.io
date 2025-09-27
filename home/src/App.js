@@ -1,13 +1,22 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight } from "lucide-react";
 import './App.css';
-import { TILING_CONFIG } from './consts';
 function App() {
   const [windows, setWindows] = useState([]);
   const [activeWindow, setActiveWindow] = useState(null);
   const [showHelp, setShowHelp] = useState(false);
   const [masterWindow, setMasterWindow] = useState(null);
   
+  // tiling consts 
+  const TILING_CONFIG = {
+    GAP_SIZE: 5,
+    BORDER_WIDTH: 2,
+    STATUS_BAR_HEIGHT: 25,
+    QUICK_LAUNCH_HEIGHT: 50,
+    MASTER_WIDTH_RATIO: 0.5 // 50% of screen for master window
+  };
+
+
   // windows and it's contents
   const windowConfigs = useMemo(() => ({
     'about': {
@@ -417,9 +426,11 @@ function App() {
         // Set a new master window if the current one is being closed
         const newMasterId = filteredWindows[0].id;
         setMasterWindow(newMasterId);
+	focusWindow(newMasterId);
         return tileWindows(filteredWindows, newMasterId);
       }
       
+      focusWindow(masterWindow);
       return tileWindows(filteredWindows);
     });
     
@@ -533,6 +544,10 @@ function App() {
                 <div className="shortcut">
                   <kbd>Alt+T</kbd>
                   <span>Open Terminal</span>
+                </div>
+                <div className="shortcut">
+                  <kbd>Alt+q</kbd>
+                  <span>close focused windw</span>
                 </div>
                 <div className="shortcut">
                   <kbd>Alt+H</kbd>
