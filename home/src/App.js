@@ -12,8 +12,8 @@ function App() {
     GAP_SIZE: 5,
     BORDER_WIDTH: 2,
     STATUS_BAR_HEIGHT: 25,
-    QUICK_LAUNCH_HEIGHT: 50,
-    MASTER_WIDTH_RATIO: 0.5 // 50% of screen for master window
+    QUICK_LAUNCH_HEIGHT: 35,
+    MASTER_WIDTH_RATIO: 0.7 // 70% of screen for master window
   };
 
 
@@ -581,7 +581,7 @@ function App() {
                 zIndex: window.zIndex,
                 border: `${TILING_CONFIG.BORDER_WIDTH}px solid #444`,
                 borderRadius: '4px',
-                overflow: 'hidden'
+                diesplay: 'flex',
               }}
             >
               <Window
@@ -638,7 +638,7 @@ function Window({ window, isActive, onClose, onFocus }) {
           <button className="close-btn" onClick={onClose}>×</button>
         </div>
       </div>
-      <div className="window-body">
+      <div className={`window-body ${window.title === 'Terminal' ? 'terminal-window' : ''}`}>
         {window.content}
       </div>
     </div>
