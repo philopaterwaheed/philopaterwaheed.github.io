@@ -34,7 +34,7 @@ jobs:
         path: |
           ~/.npm
           **/node_modules
-          home/node_modules
+          portfolio/node_modules
           project/node_modules
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json', '**/package.json') }}
         restore-keys: |
@@ -74,8 +74,8 @@ jobs:
     - name: Install dependencies (root)
       run: npm install
       
-    - name: Install dependencies (home)
-      run: cd home && npm install
+    - name: Install dependencies (portfolio)
+      run: cd portfolio && npm install
       
     - name: Install dependencies (project)
       run: cd project && npm install
