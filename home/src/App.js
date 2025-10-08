@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight } from "lucide-react";
+import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight, Briefcase, ExternalLink } from "lucide-react";
 import './App.css';
 function App() {
   const [windows, setWindows] = useState([]);
@@ -313,6 +313,66 @@ function App() {
         </div>
       )
     },
+    'experience': {
+      title: 'Work Experience',
+      content: (
+        <div className="window-content">
+          <h2>Experience</h2>
+          <div className="projects-list">
+            <div className="project">
+              <h3>CS student</h3>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Cairo University • Expected Graduation: Jan 2026</p>
+              <p>
+                Pursuing a Bachelor's degree in Computer Science, focusing on software development, algorithms, and systems programming.
+              </p>
+              <div className="tech-tags">
+                <span>C/C++</span>
+                <span>Python</span>
+                <span>Java</span>
+                <span>Node.js</span>
+                <span>React</span>
+                <span>React Native</span>
+                <span>algorithms</span>
+                <span>data structures
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'sites': {
+      title: 'External Sites',
+      content: (
+        <div className="window-content">
+          <h2>Live Web Projects</h2>
+          <p style={{ marginBottom: '15px', color: '#cccccc' }}>
+            Check out these live websites and applications I've built and deployed:
+          </p>
+          <div className="projects-list">
+            <div className="project">
+              <h3>
+                My Portfolio Website
+                <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer" style={{ marginLeft: '10px', color: '#61dafb' }}>
+                  <ExternalLink size={16} style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+                </a>
+              </h3>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>https://philopaterwaheed.github.io</p>
+              <p>
+                My personal portfolio website showcasing my projects, skills, and experience. 
+                Features a unique window manager interface inspired by my pwm project.
+              </p>
+              <div className="tech-tags">
+                <span>React</span>
+                <span>JavaScript</span>
+                <span>CSS</span>
+                <span>GitHub Pages</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
     'terminal': {
       title: 'Terminal',
       content: (
@@ -328,7 +388,7 @@ function App() {
             <br />
             <p>Use keyboard shortcuts to navigate:</p>
             <p>Alt+1: About | Alt+2: Skills | Alt+3: Projects</p>
-            <p>Alt+4: Contact | Alt+T: Terminal | Alt+H: Help</p>
+            <p>Alt+4: Contact | Alt+5: Experience | Alt+6: Sites | Alt+T: Terminal | Alt+H: Help</p>
           </div>
         </div>
       )
@@ -480,6 +540,14 @@ function App() {
             e.preventDefault();
             createWindow('contact');
             break;
+          case '5':
+            e.preventDefault();
+            createWindow('experience');
+            break;
+          case '6':
+            e.preventDefault();
+            createWindow('sites');
+            break;
           case 't':
             e.preventDefault();
             createWindow('terminal');
@@ -540,6 +608,14 @@ function App() {
                 <div className="shortcut">
                   <kbd>Alt+4</kbd>
                   <span>Open Contact</span>
+                </div>
+                <div className="shortcut">
+                  <kbd>Alt+5</kbd>
+                  <span>Open Experience</span>
+                </div>
+                <div className="shortcut">
+                  <kbd>Alt+6</kbd>
+                  <span>Open Sites</span>
                 </div>
                 <div className="shortcut">
                   <kbd>Alt+T</kbd>
@@ -605,6 +681,12 @@ function App() {
           </button>
           <button onClick={() => createWindow('contact')} className="launch-icon" title="Contact (Alt+4)">
             <Mail size={20} />
+          </button>
+          <button onClick={() => createWindow('experience')} className="launch-icon" title="Experience (Alt+5)">
+            <Briefcase size={20} />
+          </button>
+          <button onClick={() => createWindow('sites')} className="launch-icon" title="External Sites (Alt+6)">
+            <ExternalLink size={20} />
           </button>
           <button onClick={() => createWindow('terminal')} className="launch-icon" title="Terminal (Alt+T)">
             <Terminal size={20} />
