@@ -9,6 +9,7 @@ body {
   background-color: #1a1a1a;
   color: #ffffff;
   overflow: hidden;
+  font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .pwm-desktop {
@@ -32,7 +33,7 @@ body {
   justify-content: space-between;
   padding: 0 10px;
   z-index: 1000;
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
 }
 
 .status-left .logo {
@@ -109,7 +110,7 @@ body {
 }
 
 .window-title {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   font-weight: bold;
 }
 .window-controls {
@@ -161,7 +162,7 @@ body {
 .window-content h2 {
   color: #61dafb;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 20px);
   border-bottom: 1px solid #444;
   padding-bottom: 5px;
 }
@@ -170,13 +171,14 @@ body {
   color: #f39c12;
   margin-bottom: 8px;
   margin-top: 12px;
+  font-size: clamp(14px, 1.8vw, 16px);
 }
 
 .window-content p {
   line-height: 1.6;
   margin-bottom: 10px;
   color: #cccccc;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 .window-content ul {
@@ -187,7 +189,7 @@ body {
 .window-content ul li {
   padding: 4px 0;
   color: #cccccc;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 .window-content ul li::before {
@@ -260,7 +262,7 @@ body {
   color: #61dafb;
   padding: 4px 8px;
   border-radius: 3px;
-  font-size: 11px;
+  font-size: clamp(10px, 1.2vw, 12px);
   font-weight: bold;
 }
 
@@ -304,13 +306,13 @@ body {
   color: #61dafb;
   margin-bottom: 10px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: clamp(14px, 1.8vw, 16px);
 }
 
 .terminal-output p {
   color: #00ff00;
   margin: 2px 0;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 .help-overlay {
@@ -339,6 +341,7 @@ body {
   color: #61dafb;
   text-align: center;
   margin-bottom: 20px;
+  font-size: clamp(18px, 2.5vw, 22px);
 }
 
 .shortcuts-grid {
@@ -360,6 +363,7 @@ body {
 
 .shortcut span {
   flex: 1;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 kbd {
@@ -368,7 +372,7 @@ kbd {
   border-radius: 3px;
   padding: 4px 8px;
   font-family: monospace;
-  font-size: 11px;
+  font-size: clamp(10px, 1.2vw, 11px);
   color: #61dafb;
 }
 
@@ -380,6 +384,7 @@ kbd {
   border: none;
   border-radius: 5px;
   font-weight: bold;
+  font-size: clamp(13px, 1.6vw, 15px);
   transition: background-color 0.2s;
 }
 
@@ -448,9 +453,29 @@ kbd {
   box-sizing: border-box;
 }
 
+@media (max-width: 1024px) {
+  body {
+    font-size: clamp(13px, 2vw, 15px);
+  }
+  
+  .help-content {
+    max-width: 90%;
+    padding: 20px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
   .shortcuts-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
   
   .skills-grid {
@@ -459,5 +484,124 @@ kbd {
   
   .contact-info {
     grid-template-columns: 1fr;
+  }
+  
+  .window-content h2 {
+    font-size: 18px;
+  }
+  
+  .window-content h3 {
+    font-size: 15px;
+  }
+  
+  .window-content p {
+    font-size: 13px;
+  }
+  
+  .tech-tags span {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  .help-content {
+    padding: 20px 15px;
+  }
+  
+  .help-content h2 {
+    font-size: 20px;
+  }
+  
+  .status-bar {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+  
+  .window-body {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  .window-content h2 {
+    font-size: 16px;
+  }
+  
+  .window-content h3 {
+    font-size: 14px;
+  }
+  
+  .window-content p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .window-content ul li {
+    font-size: 12px;
+  }
+  
+  .tech-tags span {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+  
+  .terminal-header {
+    font-size: 14px;
+  }
+  
+  .terminal-output p {
+    font-size: 12px;
+  }
+  
+  .help-content h2 {
+    font-size: 18px;
+  }
+  
+  .shortcut span {
+    font-size: 12px;
+  }
+  
+  kbd {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .status-bar {
+    font-size: 10px;
+  }
+  
+  .status-center .clock {
+    display: none;
+  }
+  
+  .project, .skill-category, .contact-item {
+    padding: 12px;
+  }
+  
+  .quick-launch {
+    gap: 6px;
+    padding: 3px 8px;
+  }
+  
+  .launch-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .window-content h2 {
+    font-size: 22px;
+  }
+  
+  .window-content h3 {
+    font-size: 18px;
+  }
+  
+  .window-content p {
+    font-size: 15px;
   }
 }
