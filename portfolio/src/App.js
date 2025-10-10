@@ -151,139 +151,158 @@ function App() {
       <h2>Featured Projects</h2>
       <div className="projects-list">
 
-        <div className="project">
-          <h3>pwm</h3>
-          <p>
-            An X window manager for Linux written in C++ — designed to give you minimalism, speed, and control.  
-            Handles window tiling, focus management, and keybindings, all with low resource usage.
-          </p>
-          <div className="tech-tags">
-            <span>C++</span>
-            <span>Linux</span>
-            <span>Window Manager</span>
-            <span>Xlib</span>
-            <span>Systems Programming</span>
-            <span>Linux</span>
+        <a href="https://github.com/philopaterwaheed/pwm" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>pwm</h3>
+            <p>
+              An X window manager for Linux written in C++ — designed to give you minimalism, speed, and control.  
+              Handles window tiling, focus management, and keybindings, all with low resource usage.
+            </p>
+            <div className="tech-tags">
+              <span>C++</span>
+              <span>Linux</span>
+              <span>Window Manager</span>
+              <span>Xlib</span>
+              <span>Systems Programming</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>fileio</h3>
-          <p>
-            Terminal-based file manager written in Rust. Provides intuitive navigation, file operations, and keyboard shortcuts.  
-            Aimed at power users who prefer working from the terminal.
-          </p>
-          <div className="tech-tags">
-            <span>Rust</span>
-            <span>Terminal UI</span>
-            <span>Linux</span>
+        <a href="https://github.com/philopaterwaheed/fileio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>fileio</h3>
+            <p>
+              Terminal-based file manager written in Rust. Provides intuitive navigation, file operations, and keyboard shortcuts.  
+              Aimed at power users who prefer working from the terminal.
+            </p>
+            <div className="tech-tags">
+              <span>Rust</span>
+              <span>Terminal UI</span>
+              <span>Linux</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>launchio</h3>
-          <p>
-            A custom app launcher tool written in Rust. Quickly launch apps via commands or UI, streamlining workflow and productivity.
-          </p>
-          <div className="tech-tags">
-            <span>Rust</span>
-            <span>Productivity Tool</span>
-            <span>fltk</span>
+        <a href="https://github.com/philopaterwaheed/launchio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>launchio</h3>
+            <p>
+              A custom app launcher tool written in Rust. Quickly launch apps via commands or UI, streamlining workflow and productivity.
+            </p>
+            <div className="tech-tags">
+              <span>Rust</span>
+              <span>Productivity Tool</span>
+              <span>fltk</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>exeio</h3>
-          <p>
-            A process supervisor in Rust. It runs and monitors processes, exposes a REST API for external control/monitoring, designed for server or development environments.
-          </p>
-          <div className="tech-tags">
-            <span>Rust</span>
-            <span>REST API</span>
-            <span>Process Management</span>
-            <span>Linux</span>
-            <span>threading</span>
-            <span>System Tool</span>
+        <a href="https://github.com/philopaterwaheed/exeio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>exeio</h3>
+            <p>
+              A process supervisor in Rust. It runs and monitors processes, exposes a REST API for external control/monitoring, designed for server or development environments.
+            </p>
+            <div className="tech-tags">
+              <span>Rust</span>
+              <span>REST API</span>
+              <span>Process Management</span>
+              <span>Linux</span>
+              <span>threading</span>
+              <span>System Tool</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>bbook</h3>
-          <p>
-            Terminal-based text editor built in C++ using ncurses. Includes syntax highlighting, basic file operations, customizable keybindings — inspired by classic editors.
-          </p>
-          <div className="tech-tags">
-            <span>C++</span>
-            <span>Text Editor</span>
-            <span>ncurses</span>
+        <a href="https://github.com/philopaterwaheed/bbook_the_text_editor" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>bbook</h3>
+            <p>
+              Terminal-based text editor built in C++ using ncurses. Includes syntax highlighting, basic file operations, customizable keybindings — inspired by classic editors.
+            </p>
+            <div className="tech-tags">
+              <span>C++</span>
+              <span>Text Editor</span>
+              <span>ncurses</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>psio</h3>
-          <p>
-            Automation tool in C++ for generating and running test cases from Codeforces problems.  
-            Helps in benchmarking and validating competitive programming solutions quickly.
-          </p>
-          <div className="tech-tags">
-            <span>C++</span>
-            <span>Automation</span>
-            <span>Web scraping</span>
-            <span>Pipes</span>
-            <span>Competitive Programming</span>
+        <a href="https://github.com/philopaterwaheed/psio" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>psio</h3>
+            <p>
+              Automation tool in C++ for generating and running test cases from Codeforces problems.  
+              Helps in benchmarking and validating competitive programming solutions quickly.
+            </p>
+            <div className="tech-tags">
+              <span>C++</span>
+              <span>Automation</span>
+              <span>Web scraping</span>
+              <span>Pipes</span>
+              <span>Competitive Programming</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>cppi</h3>
-          <p>
-            A modern C++ preprocessor tool that enhances and simplifies handling of C++ code, 
-            designed for extensibility and ease of integration into build systems.
-          </p>
-          <div className="tech-tags">
-            <span>C++</span>
-            <span>Networking</span>
-            <span>Build Tools</span>
+        <a href="https://github.com/philopaterwaheed/cppi" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>cppi</h3>
+            <p>
+              A modern C++ HTTP library that enhances and simplifies handling of HTTP requests and responses, 
+              designed for extensibility and ease of integration into build systems.
+            </p>
+            <div className="tech-tags">
+              <span>C++</span>
+              <span>HTTP</span>
+              <span>Networking</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>Catch The Flag</h3>
-          <p>
-            Multiplayer capture-the-flag style game implemented in C++.  
-            Focuses on networked gameplay, strategy, and performance in real-time.
-          </p>
-          <div className="tech-tags">
-            <span>Java</span>
-            <span>Game Development</span>
-            <span>ECS</span>
+        <a href="https://github.com/philopaterwaheed/Catch_the_flag_game" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>Catch The Flag</h3>
+            <p>
+              Multiplayer capture-the-flag style game implemented in Java.  
+              Focuses on networked gameplay, strategy, and performance in real-time.
+            </p>
+            <div className="tech-tags">
+              <span>Java</span>
+              <span>Game Development</span>
+              <span>ECS</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>Novel Nest</h3>
-          <p>
-            An online bookstore application. Provides browsing, search, and review features for books.  
-            Full-stack application with web front-end and backend services.
-          </p>
-          <div className="tech-tags">
-            <span>Web</span>
-            <span>Full-stack</span>
-            <span>JavaScript / React Native / Node.js</span>
+        <a href="https://github.com/Ahmed3zzeldeen/Novel-Nest-App" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>Novel Nest</h3>
+            <p>
+              An online bookstore application. Provides browsing, search, and review features for books.  
+              Full-stack application with web front-end and backend services.
+            </p>
+            <div className="tech-tags">
+              <span>Web</span>
+              <span>Full-stack</span>
+              <span>JavaScript / React Native / Node.js</span>
+            </div>
           </div>
-        </div>
+        </a>
 
-        <div className="project">
-          <h3>compy</h3>
-          <p>
-            AST (Abstract Syntax Tree) generator for C++, built to parse code and output structured representations useful for code analysis or tooling.
-          </p>
-          <div className="tech-tags">
-            <span>Java</span>
-            <span>Parser / AST</span>
-            <span>Code Analysis</span>
+        <a href="https://github.com/philopaterwaheed/compy" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>compy</h3>
+            <p>
+              AST (Abstract Syntax Tree) generator for C++, built to parse code and output structured representations useful for code analysis or tooling.
+            </p>
+            <div className="tech-tags">
+              <span>Java</span>
+              <span>Parser / AST</span>
+              <span>Code Analysis</span>
+            </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -297,28 +316,30 @@ function App() {
         <div className="window-content">
           <h2>Get in Touch</h2>
           <div className="contact-info">
-            <div className="contact-item">
-              <h3><Mail size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Email</h3>
-              <p>philopaterwaheed9@gmail.com</p>
-            </div>
-            <div className="contact-item">
-              <h3><Github size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> GitHub</h3>
-              <a href="https://github.com/philopaterwaheed" target="_blank" rel="noopener noreferrer">
-                <p>https://github.com/philopaterwaheed</p>
-              </a>
-            </div>
-            <div className="contact-item">
-              <h3><Linkedin size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/philopater-waheed-561292227/" target="_blank" rel="noopener noreferrer">
-                <p>https://www.linkedin.com/in/philopater-waheed-561292227/</p>
-              </a>
-            </div>
-            <div className="contact-item">
-              <h3><Globe size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Portfolio</h3>
-              <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer">
-                <p>https://philopaterwaheed.github.io</p>
-              </a>
-            </div>
+            <a href="mailto:philopaterwaheed9@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="contact-item" style={{ cursor: 'pointer' }}>
+                <h3><Mail size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Email</h3>
+                <p style={{ color: '#61dafb' }}>philopaterwaheed9@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/philopaterwaheed" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="contact-item" style={{ cursor: 'pointer' }}>
+                <h3><Github size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> GitHub</h3>
+                <p style={{ color: '#61dafb' }}>github.com/philopaterwaheed</p>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/philopater-waheed-561292227/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="contact-item" style={{ cursor: 'pointer' }}>
+                <h3><Linkedin size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> LinkedIn</h3>
+                <p style={{ color: '#61dafb' }}>linkedin.com/in/philopater-waheed</p>
+              </div>
+            </a>
+            <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="contact-item" style={{ cursor: 'pointer' }}>
+                <h3><Globe size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> Portfolio</h3>
+                <p style={{ color: '#61dafb' }}>philopaterwaheed.github.io</p>
+              </div>
+            </a>
           </div>
         </div>
       )
@@ -360,25 +381,25 @@ function App() {
             Check out these live websites and applications I've built and deployed:
           </p>
           <div className="projects-list">
-            <div className="project">
-              <h3>
-                My Portfolio Website
-                <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer" style={{ marginLeft: '10px', color: '#61dafb' }}>
-                  <ExternalLink size={16} style={{ display: 'inline-block', verticalAlign: 'middle' }} />
-                </a>
-              </h3>
-              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>https://philopaterwaheed.github.io</p>
-              <p>
-                My personal portfolio website showcasing my projects, skills, and experience. 
-                Features a unique window manager interface inspired by my pwm project.
-              </p>
-              <div className="tech-tags">
-                <span>React</span>
-                <span>JavaScript</span>
-                <span>CSS</span>
-                <span>GitHub Pages</span>
+            <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="project" style={{ cursor: 'pointer' }}>
+                <h3>
+                  My Portfolio Website
+                  <ExternalLink size={16} style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', color: '#61dafb' }} />
+                </h3>
+                <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>https://philopaterwaheed.github.io</p>
+                <p>
+                  My personal portfolio website showcasing my projects, skills, and experience. 
+                  Features a unique window manager interface inspired by my pwm project.
+                </p>
+                <div className="tech-tags">
+                  <span>React</span>
+                  <span>JavaScript</span>
+                  <span>CSS</span>
+                  <span>GitHub Pages</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       )
