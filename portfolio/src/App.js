@@ -494,7 +494,7 @@ function App() {
       // Update master window if needed in the same state update
       if (filteredWindows.length > 0 && masterWindow === id) {
         // Set a new master window if the current one is being closed
-        const newMasterId = filteredWindows[0].id;
+        const newMasterId = filteredWindows[filteredWindows.length - 1].id;
         setMasterWindow(newMasterId);
 	focusWindow(newMasterId);
         return tileWindows(filteredWindows, newMasterId);
