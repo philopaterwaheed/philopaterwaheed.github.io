@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight, Briefcase, ExternalLink } from "lucide-react";
+import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight, Briefcase, ExternalLink, Download } from "lucide-react";
 import './App.css';
 function App() {
   const [windows, setWindows] = useState([]);
@@ -38,6 +38,16 @@ function App() {
               <li>Education: Computer Science Student at Cairo University</li>
               <li>Interests: Open Source, Linux Tools, Performance Optimization</li>
             </ul>
+            <a 
+              href="https://docs.google.com/document/d/14806tbKGYbfnIlEs6Ovi67zxWmiPSZgB/export?format=pdf&name=Philopater_Waheed_CV.pdf" 
+              download="Philopater_Waheed_CV.pdf"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cv-download-btn"
+            >
+              <Download size={18} />
+              <span>Download CV</span>
+            </a>
           </div>
         </div>
       )

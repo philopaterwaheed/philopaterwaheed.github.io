@@ -205,6 +205,33 @@ body {
   margin-top: 10px;
 }
 
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #61dafb;
+}
+
+.cv-download-btn:hover {
+  background-color: #4fa8c5;
+  border-color: #4fa8c5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+}
+
+.cv-download-btn:active {
+  transform: translateY(0);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
