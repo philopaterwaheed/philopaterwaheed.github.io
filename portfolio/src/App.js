@@ -39,7 +39,7 @@ function App() {
               <li>Interests: Open Source, Linux Tools, Performance Optimization</li>
             </ul>
             <a 
-              href="https://docs.google.com/document/d/14806tbKGYbfnIlEs6Ovi67zxWmiPSZgB/export?format=pdf&name=Philopater_Waheed_CV.pdf" 
+              href="https://docs.google.com/document/d/1Z9XbdLk-zzmd_-m4yHmoucFbwfEKk207/export?format=pdf&name=Philopater_Waheed_CV.pdf" 
               download="Philopater_Waheed_CV.pdf"
               target="_blank" 
               rel="noopener noreferrer"
