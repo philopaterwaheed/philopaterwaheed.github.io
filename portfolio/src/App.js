@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, ChevronRight, Briefcase, ExternalLink, Download } from "lucide-react";
+import { User, Wrench, Folder, Mail, Terminal, Github, Linkedin, Globe, Briefcase, ExternalLink, Download } from "lucide-react";
+import PortfolioTerminal from './Terminal';
 import './App.css';
 function App() {
   const [windows, setWindows] = useState([]);
@@ -430,7 +431,7 @@ function App() {
             </div>
             <div className="project">
               <h3>ECPC — Top 40</h3>
-              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Egyptian Collegiate Programming Contest • Alexandria, Egypt • Jul 2025</p>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Egyptian Collegiate Programming Contest • Alexandria, Egypt • Jul 2024</p>
               <p>
                 Competed against 300+ participants from universities across Egypt and
                 ranked in the Top 40 under timed contest conditions.
@@ -519,23 +520,7 @@ function App() {
     },
     'terminal': {
       title: 'Terminal',
-      content: (
-        <div className="window-content terminal-content">
-          <div className="terminal-header">philosan@portfolio:~$</div>
-          <div className="terminal-output">
-            <p>Welcome to my portfolio terminal!</p>
-            <p>Available commands:</p>
-            <p><ChevronRight size={12} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} /> whoami - Display user information</p>
-            <p><ChevronRight size={12} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} /> ls - List portfolio sections</p>
-            <p><ChevronRight size={12} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} /> cat about.txt - Show about information</p>
-            <p><ChevronRight size={12} style={{ display: 'inline-block', marginRight: '4px', verticalAlign: 'middle' }} /> help - Show available shortcuts</p>
-            <br />
-            <p>Use keyboard shortcuts to navigate:</p>
-            <p>Alt+1: About | Alt+2: Skills | Alt+3: Projects</p>
-            <p>Alt+4: Contact | Alt+5: Experience | Alt+6: Sites | Alt+T: Terminal | Alt+H: Help</p>
-          </div>
-        </div>
-      )
+      content: null
     }
   }), []);
 
@@ -809,6 +794,7 @@ function App() {
                 isActive={activeWindow === window.id}
                 onClose={() => closeWindow(window.id)}
                 onFocus={() => focusWindow(window.id)}
+                onOpenWindow={createWindow}
               />
             </div>
           ))}
@@ -841,7 +827,7 @@ function App() {
   );
 }
 
-function Window({ window, isActive, onClose, onFocus }) {
+function Window({ window, isActive, onClose, onFocus, onOpenWindow }) {
   const handleMouseDown = (e) => {
     if (e.target.closest('.window-controls')) return;
     onFocus();
@@ -864,8 +850,16 @@ function Window({ window, isActive, onClose, onFocus }) {
           <button className="close-btn" onClick={onClose}>×</button>
         </div>
       </div>
-      <div className={`window-body ${window.title === 'Terminal' ? 'terminal-window' : ''}`}>
-        {window.content}
+      <div className={`window-body ${window.type === 'terminal' ? 'terminal-window' : ''}`}>
+        {window.type === 'terminal' ? (
+          <PortfolioTerminal
+            isActive={isActive}
+            onOpenWindow={onOpenWindow}
+            onClose={onClose}
+          />
+        ) : (
+          window.content
+        )}
       </div>
     </div>
   );

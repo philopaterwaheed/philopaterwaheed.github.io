@@ -327,6 +327,75 @@ body {
   border-radius: 0 0 5px 5px;
   height: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.terminal-line {
+  color: #00ff00;
+  margin: 2px 0;
+  font-size: clamp(12px, 1.5vw, 14px);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.terminal-line.terminal-prompt {
+  color: #61dafb;
+}
+
+.terminal-line.terminal-error {
+  color: #e74c3c;
+}
+
+.terminal-line.terminal-info {
+  color: #cccccc;
+}
+
+.terminal-line.terminal-dir {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+.terminal-link {
+  color: #61dafb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.terminal-link:hover {
+  color: #4fa8c5;
+}
+
+.terminal-prompt-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.terminal-prompt {
+  color: #61dafb;
+  font-weight: bold;
+  font-size: clamp(12px, 1.5vw, 14px);
+  flex-shrink: 0;
+}
+
+.terminal-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff00;
+  font-family: inherit;
+  font-size: clamp(12px, 1.5vw, 14px);
+  caret-color: #00ff00;
 }
 
 .terminal-header {
