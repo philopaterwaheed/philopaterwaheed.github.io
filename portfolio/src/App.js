@@ -24,19 +24,20 @@ function App() {
       content: (
         <div className="window-content">
           <h2>Philopater Waheed</h2>
-          <p>Software Engineer • Computer Science Student • (Rust, C++) / Linux Enthusiast • Developer</p>
+          <p>Software Engineer • B.Sc. Computer Science • (Go, Rust, C++) / Linux Enthusiast</p>
           <div className="bio">
             <p>
-              Passionate about systems programming, open-source development, 
-              and building efficient, reliable software. Skilled in C++, Rust, 
-              and full-stack web technologies, with experience across Linux, 
-              backend services, and modern application development.
+              Computer Science graduate from Cairo University and software engineer
+              building real-world web apps, secure backends, and systems software
+              in Go, Rust, C++, Python, and JavaScript. Comfortable across the stack,
+              from React frontends to Linux container runtimes and REST APIs.
+
             </p>
             <ul>
-              <li>Focus: Systems Programming, Full-Stack Development</li>
-              <li>Tech: C++, Java, Rust, Linux, React, Express</li>
-              <li>Education: Computer Science Student at Cairo University</li>
-              <li>Interests: Open Source, Linux Tools, Performance Optimization</li>
+              <li>Focus: Systems Programming, Backend, Full-Stack Development</li>
+              <li>Tech: Go, Rust, C++, Python, JavaScript, Linux, Docker, React</li>
+              <li>Education: B.Sc. Computer Science, Cairo University (Jun 2026)</li>
+              <li>Based in Giza, Egypt • Arabic (native), English (B2)</li>
             </ul>
             <a 
               href="https://docs.google.com/document/d/1Z9XbdLk-zzmd_-m4yHmoucFbwfEKk207/export?format=pdf&name=Philopater_Waheed_CV.pdf" 
@@ -59,97 +60,104 @@ function App() {
           <h2>Skills & Technologies</h2>
           <div className="skills-grid">
             <div className="skill-category">
-              <h3>Frontend</h3>
+              <h3>Languages</h3>
               <ul>
-                <li>React.js / React Native</li>
+                <li>Go / Rust / C++</li>
+                <li>Python / Java / C</li>
                 <li>JavaScript / TypeScript</li>
-                <li>HTML5 / CSS</li>
               </ul>
             </div>
             <div className="skill-category">
-              <h3>Backend</h3>
+              <h3>Web & APIs</h3>
               <ul>
-                <li>Node.js / Express</li>
-                <li>Python / FastAPI</li>
-                <li>Rust</li>
+                <li>React / React Native / Vite</li>
+                <li>Node.js / Express / FastAPI / Gin</li>
+                <li>REST, JWT, OAuth, real-time chat</li>
               </ul>
             </div>
             <div className="skill-category">
-              <h3>Tools & Others</h3>
+              <h3>Data</h3>
               <ul>
-                <li>Git / GitHub</li>
-                <li>Azure</li>
-                <li>Linux</li>
+                <li>MongoDB / MySQL / SQL</li>
+                <li>Firebase / Supabase Auth</li>
+                <li>SQL design and optimization</li>
+              </ul>
+            </div>
+            <div className="skill-category">
+              <h3>Systems & Practice</h3>
+              <ul>
+                <li>Linux, Docker, OCI, systemd</li>
+                <li>Namespaces, cgroups, networking</li>
+                <li>Git, CI/CD, testing, clean architecture</li>
               </ul>
             </div>
           </div>
         </div>
       )
     },
-'projects': {
+    'projects': {
   title: 'Projects',
   content: (
     <div className="window-content">
       <h2>Featured Projects</h2>
       <div className="projects-list">
-        <div className="project">
-          <h3>Novel Nest App</h3>
-          <p>
-            A full-stack mobile and web application for book lovers, 
-            featuring authentication, reviews, and personalized recommendations. 
-            Built with Flutter and Firebase.
-          </p>
-          <div className="tech-tags">
-            <span>Flutter</span>
-            <span>Firebase</span>
-            <span>TypeScript</span>
+
+        <a href="https://github.com/philopaterwaheed/PassGO" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>PassGO</h3>
+            <p>
+              Full-stack encrypted password manager in Go. Gin API, MongoDB vault storage,
+              and Supabase auth with AES-256-GCM encryption, Argon2id key derivation,
+              JWT-protected routes, and rate limiting. Cross-platform Gio frontend
+              (desktop, WebAssembly, mobile) with Docker and CI builds.
+            </p>
+            <div className="tech-tags">
+              <span>Go</span>
+              <span>Gin</span>
+              <span>MongoDB</span>
+              <span>Supabase</span>
+              <span>Docker</span>
+              <span>Gio / WASM</span>
+            </div>
           </div>
-        </div>
-        <div className="project">
-          <h3>crafty</h3>
-          <p>
-            A Rust-based CLI tool to manage ArchCraft packages from GitHub, 
-            supporting search, install, upgrade, and dependency resolution.
-          </p>
-          <div className="tech-tags">
-            <span>Rust</span>
-            <span>CLI</span>
-            <span>Linux</span>
+        </a>
+
+        <a href="https://github.com/philopaterwaheed/phiocker" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>phiocker</h3>
+            <p>
+              Docker-inspired Linux container runtime in Go. Pulls OCI images, extracts a rootfs,
+              and runs containers with UTS/PID/mount/network namespaces, cgroup v2 limits,
+              bridge networking, NAT, and a Unix-socket daemon with PTY attach.
+            </p>
+            <div className="tech-tags">
+              <span>Go</span>
+              <span>Linux</span>
+              <span>OCI</span>
+              <span>cgroups</span>
+              <span>Namespaces</span>
+              <span>systemd</span>
+            </div>
           </div>
-        </div>
-        <div className="project">
-          <h3>Rust File Manager</h3>
-          <p>
-            Terminal-based file manager built with Ratatui, 
-            featuring bookmarking, navigation, and keyboard shortcuts.
-          </p>
-          <div className="tech-tags">
-            <span>Rust</span>
-            <span>Ratatui</span>
-            <span>Linux</span>
+        </a>
+
+        <a href="https://github.com/philopaterwaheed/planitly_backend" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>Planitly Backend</h3>
+            <p>
+              FastAPI backend for a productivity platform with REST APIs for subjects,
+              components, and scheduled data transfers. JWT and Firebase Auth, IP-based
+              rate limiting, FCM, and an LLM-powered chatbot for productivity assistance.
+            </p>
+            <div className="tech-tags">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Firebase</span>
+              <span>LLM</span>
+              <span>JWT</span>
+            </div>
           </div>
-        </div>
-        <div className="project">
-          <h3>restlite.hpp</h3>
-          <p>
-            A modern single-header C++17 library for building RESTful APIs, 
-            featuring routing, JSON parsing, multi-threading, and logging.
-          </p>
-          <div className="tech-tags">
-            <span>C++17</span>
-            <span>REST API</span>
-            <span>JSON</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-},'projects': {
-  title: 'Projects',
-  content: (
-    <div className="window-content">
-      <h2>Featured Projects</h2>
-      <div className="projects-list">
+        </a>
 
         <a href="https://github.com/philopaterwaheed/pwm" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="project" style={{ cursor: 'pointer' }}>
@@ -279,8 +287,8 @@ function App() {
           <div className="project" style={{ cursor: 'pointer' }}>
             <h3>Novel Nest</h3>
             <p>
-              An online bookstore application. Provides browsing, search, and review features for books.  
-              Full-stack application with web front-end and backend services.
+              Online bookstore built with a 5-person team. Browsing, search, reviews,
+              and Firebase authentication and storage across web and React Native clients.
             </p>
             <div className="tech-tags">
               <span>Web</span>
@@ -294,12 +302,45 @@ function App() {
           <div className="project" style={{ cursor: 'pointer' }}>
             <h3>compy</h3>
             <p>
-              AST (Abstract Syntax Tree) generator for C++, built to parse code and output structured representations useful for code analysis or tooling.
+              C++ parser and AST generator using ANTLR 3, covering variables, classes,
+              functions, and control structures. Includes a Swing IDE with live syntax
+              highlighting, error reporting, and Graphviz AST visualization.
             </p>
             <div className="tech-tags">
               <span>Java</span>
+              <span>ANTLR</span>
               <span>Parser / AST</span>
               <span>Code Analysis</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/philopaterwaheed/The_hive" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>The Hive</h3>
+            <p>
+              Hive-minded neural network simulation: a small ecosystem of organisms
+              competing to survive, built as an experiment in collective behavior.
+            </p>
+            <div className="tech-tags">
+              <span>Simulation</span>
+              <span>Neural Networks</span>
+              <span>Open Source</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/philopaterwaheed/crafty" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="project" style={{ cursor: 'pointer' }}>
+            <h3>crafty</h3>
+            <p>
+              Rust CLI for pulling Archcraft packages onto other pacman-based distros
+              without wiring up their mirrors by hand.
+            </p>
+            <div className="tech-tags">
+              <span>Rust</span>
+              <span>CLI</span>
+              <span>Arch / pacman</span>
             </div>
           </div>
         </a>
@@ -322,6 +363,10 @@ function App() {
                 <p style={{ color: '#61dafb' }}>philopaterwaheed9@gmail.com</p>
               </div>
             </a>
+            <div className="contact-item">
+              <h3>Location</h3>
+              <p>Giza, Egypt</p>
+            </div>
             <a href="https://github.com/philopaterwaheed" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="contact-item" style={{ cursor: 'pointer' }}>
                 <h3><Github size={16} style={{ display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }} /> GitHub</h3>
@@ -351,21 +396,49 @@ function App() {
           <h2>Experience</h2>
           <div className="projects-list">
             <div className="project">
-              <h3>CS student</h3>
-              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Cairo University • Expected Graduation: Jan 2026</p>
+              <h3>Freelance Software Engineer</h3>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Carina Health Clinic • Cairo, Egypt • Mar 2026 – Present</p>
               <p>
-                Pursuing a Bachelor's degree in Computer Science, focusing on software development, algorithms, and systems programming.
+                Built an offline-first nutrition coach platform as a mobile-like PWA with
+                React, Vite, Node.js, Express, and MongoDB. Shipped real-time chat, payment
+                gateway integration, role-based admin tools, and automated reminder workflows.
+              </p>
+              <div className="tech-tags">
+                <span>React</span>
+                <span>Vite</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>MongoDB</span>
+                <span>PWA</span>
+              </div>
+            </div>
+            <div className="project">
+              <h3>B.Sc. Computer Science</h3>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Cairo University, Faculty of Science • Giza, Egypt • Jun 2026</p>
+              <p>
+                Bachelor of Science in Computer Science. Coursework in data structures,
+                algorithms, databases, OOP, system design, software engineering, and machine learning.
               </p>
               <div className="tech-tags">
                 <span>C/C++</span>
                 <span>Python</span>
                 <span>Java</span>
-                <span>Node.js</span>
-                <span>React</span>
-                <span>React Native</span>
+                <span>Go</span>
                 <span>algorithms</span>
-                <span>data structures
-                </span>
+                <span>data structures</span>
+              </div>
+            </div>
+            <div className="project">
+              <h3>ECPC — Top 40</h3>
+              <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>Egyptian Collegiate Programming Contest • Alexandria, Egypt • Jul 2025</p>
+              <p>
+                Competed against 300+ participants from universities across Egypt and
+                ranked in the Top 40 under timed contest conditions.
+              </p>
+              <div className="tech-tags">
+                <span>Competitive Programming</span>
+                <span>Algorithms</span>
+                <span>Problem Solving</span>
               </div>
             </div>
           </div>
@@ -381,6 +454,46 @@ function App() {
             Check out these live websites and applications I've built and deployed:
           </p>
           <div className="projects-list">
+            <a href="https://carina-pwa-1.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="project" style={{ cursor: 'pointer' }}>
+                <h3>
+                  Carina Nutrition Coach
+                  <ExternalLink size={16} style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', color: '#61dafb' }} />
+                </h3>
+                <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>https://carina-pwa-1.vercel.app/</p>
+                <p>
+                  Production PWA for Carina Health Clinic: offline-first meal plans,
+                  progress tracking, real-time chat, payments, and admin tools.
+                </p>
+                <div className="tech-tags">
+                  <span>React</span>
+                  <span>Vite</span>
+                  <span>Node.js</span>
+                  <span>MongoDB</span>
+                  <span>PWA</span>
+                </div>
+              </div>
+            </a>
+            <a href="https://github.com/philopaterwaheed" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="project" style={{ cursor: 'pointer' }}>
+                <h3>
+                  GitHub
+                  <ExternalLink size={16} style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: '10px', color: '#61dafb' }} />
+                </h3>
+                <p style={{ color: '#f39c12', fontSize: '13px', marginBottom: '8px' }}>https://github.com/philopaterwaheed</p>
+                <p>
+                  Open-source systems and tooling: pwm, PassGO, phiocker, exeio, and
+                  other Linux, Go, Rust, and C++ projects.
+                </p>
+                <div className="tech-tags">
+                  <span>Go</span>
+                  <span>Rust</span>
+                  <span>C++</span>
+                  <span>Linux</span>
+                  <span>Open Source</span>
+                </div>
+              </div>
+            </a>
             <a href="https://philopaterwaheed.github.io" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="project" style={{ cursor: 'pointer' }}>
                 <h3>
